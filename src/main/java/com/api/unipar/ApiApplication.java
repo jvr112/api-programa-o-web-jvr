@@ -1,4 +1,4 @@
-package com.api.unipar.api;
+package com.api.unipar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
