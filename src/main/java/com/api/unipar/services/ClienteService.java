@@ -35,6 +35,7 @@ public class ClienteService {
 
     public Cliente atualizarCliente(Long id, Cliente cliente) {
         Cliente clienteSalvo = buscarClientePorId(id);
+//        BeanUtils não foi instanciado por ser um método estático, todo método estático não precisa ser instanciado (economiza memória)
         BeanUtils.copyProperties(cliente, clienteSalvo, "id");
         return clienteRepository.save(clienteSalvo);
     }
