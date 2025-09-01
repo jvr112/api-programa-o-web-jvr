@@ -12,6 +12,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private String cidade;
+    @Column (name = "cep", length = 9, nullable = false) //está definindo que o atributo cep terá somente 9 caracteres e significa que ele deve ser obrigatório
+    private String cep;
+    @Column (length = 80)
+    private String rua;
 
     public String getNome() {
         return nome;
@@ -27,6 +32,10 @@ public class Cliente {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEndereco() {
+        return this.rua +  " , " + this.cidade + " - " + this.cep;
     }
 
     @Override
